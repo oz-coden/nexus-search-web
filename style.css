@@ -1,0 +1,13 @@
+.search-box { display: flex; align-items: stretch; gap: 12px; }
+.search-input-wrapper { flex: 1; min-width: 0; position: relative; }
+.history-dropdown { display: none; position: absolute; z-index: 10; left: 0; right: 0; top: 100%; padding: 6px; margin: 6px 0 0; list-style: none; border: 1px solid var(--c-border); border-radius: 8px; background: var(--c-bg-card); box-shadow: var(--ui-shadow); }
+.history-item { width: 100%; padding: 8px 10px; border: none; border-radius: 5px; background: transparent; color: var(--c-text-main); text-align: left; overflow-wrap: anywhere; }
+.history-item:hover { background: var(--c-bg-main); }
+.bookmarks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-top: 16px; }
+.bookmark-card { display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--c-border); border-radius: 8px; min-width: 0; padding: 12px; gap: 8px; }
+.bookmark-card a { text-decoration: none; overflow-wrap: anywhere; }
+.bookmark-card button { border: 0; background: transparent; color: var(--c-danger); padding: 4px 8px; font-size: 1.2rem; }
+.advanced-fields { display: grid; gap: 12px; padding-top: 20px; }
+.advanced-fields input { margin-top: 6px; }
+summary { cursor: pointer; font-weight: 700; }
+#storage-status:empty { display: none; }

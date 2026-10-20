@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="検索エンジンの切替、詳細検索、ブックマークをひとつの画面で。">
+    <title>Nexus Search | oz-coden tools</title>
+    <script src="vendor/ui/ui.js"></script>
+    <link rel="stylesheet" href="vendor/ui/ui.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="ui-header" data-ui-header data-title="Nexus Search" data-source="https://github.com/oz-coden/nexus-search-web">
+        <a class="ui-brand" href="https://tools.oz-coden.com/">oz-coden tools</a>
+    </header>
+    <main class="ui-main">
+        <div class="ui-heading">
+            <p class="ui-eyebrow">SEARCH TOOLS</p>
+            <h1>Nexus Search</h1>
+            <p class="ui-description">検索エンジンの切替、詳細検索、ブックマークをひとつの画面で。</p>
+        </div>
+        <div class="ui-stack">
+            <section class="ui-panel">
+                <label for="search_key">検索キーワード</label>
+                <div class="search-box"><div class="search-input-wrapper"><input id="search_key" type="search" placeholder="検索…（ / でフォーカス）" autocomplete="off"><ul id="history_dropdown" class="history-dropdown" aria-label="検索履歴"></ul></div><button id="search_button" class="btn-primary">検索</button></div>
+                <p id="storage-status" class="ui-status" role="status"></p>
+            </section>
+            <section class="ui-panel">
+                <div class="ui-between"><h2>ブックマーク</h2><button id="add_bookmark_btn" class="btn-small">＋ 追加</button></div>
+                <div id="bookmarks_grid" class="bookmarks-grid"></div>
+            </section>
+            <div class="ui-row">
+                <details open class="ui-panel"><summary>詳細検索</summary><div class="advanced-fields">
+                    <label>すべて含む<input id="adv_all" type="text" placeholder="Java Runtime"></label>
+                    <label>完全一致（複数可・カンマ区切り）<input id="adv_exact" type="text" placeholder="Coffeelake, Skylake"></label>
+                    <label>いずれかを含む<input id="adv_any" type="text"></label>
+                    <label>どれも含まない<input id="adv_not" type="text"></label>
+                    <label>サイトまたはドメイン<input id="adv_site" type="text" placeholder="ac.jp"></label>
+                    <button id="advanced_search" class="btn-primary">詳細検索を実行</button>
+                </div></details>
+                <section class="ui-panel"><h2>設定</h2><label for="search_engine">検索エンジン</label><select id="search_engine">
+                    <option value="www.google.com/search?q=">Google</option><option value="www.bing.com/search?q=">Bing</option><option value="search.brave.com/search?q=">Brave</option><option value="duckduckgo.com/?q=">DuckDuckGo</option><option value="search.yahoo.co.jp/search?p=">Yahoo Japan</option>
+                </select><p class="ui-note">履歴・ブックマーク・設定はこのブラウザに保存されます。検索は選んだ検索エンジンを別タブで開きます。</p></section>
+            </div>
+        </div>
+        <dialog id="bookmark_modal" class="ui-dialog"><form id="bookmark_form"><h2>ブックマークを追加</h2>
+            <label for="modal_title">サイト名</label><input type="text" id="modal_title" required maxlength="200" placeholder="例: GitHub">
+            <label for="modal_url">URL</label><input type="text" inputmode="url" id="modal_url" required placeholder="例: https://github.com">
+            <div class="ui-actions"><button type="button" id="modal_cancel" class="btn-cancel">キャンセル</button><button type="submit" class="btn-primary">保存</button></div>
+        </form></dialog>
+        <dialog id="delete_modal" class="ui-dialog"><h2>ブックマークの削除</h2><p id="delete_target_name"></p><div class="ui-actions"><button type="button" id="delete_cancel" class="btn-cancel">キャンセル</button><button type="button" id="delete_execute" class="btn-danger">削除する</button></div></dialog>
+    </main>
+</body>
+</html>
