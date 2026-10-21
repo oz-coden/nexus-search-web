@@ -109,17 +109,19 @@ function renderBookmarks() {
 renderBookmarks();
 document.getElementById('add_bookmark_btn').addEventListener('click', () => {
     form.reset();
+    titleInput.setCustomValidity('');
     urlInput.setCustomValidity('');
     addModal.showModal();
 });
 urlInput.addEventListener('input', () => urlInput.setCustomValidity(''));
+titleInput.addEventListener('input', () => titleInput.setCustomValidity(''));
 form.addEventListener('submit', event => {
     event.preventDefault();
     const title = titleInput.value.trim();
     const url = httpUrl(urlInput.value.trim());
-    if (!title || !url) {
-        urlInput.setCustomValidity('http:// または https:// のURLを入力してください。');
-        urlInput.reportValidity();
+    titleInput.setCustomValidity(title ? '' : 'サイト名を入力してください。');
+    urlInput.setCustomValidity(url ? '' : 'http:// または https:// のURLを入力してください。');
+    if (!form.reportValidity()) {
         return;
     }
     bookmarks.push({ title, url });

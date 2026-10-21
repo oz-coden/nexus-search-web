@@ -11,3 +11,6 @@
 .advanced-fields input { margin-top: 6px; }
 summary { cursor: pointer; font-weight: 700; }
 #storage-status:empty { display: none; }
+
+.search-controls { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 16px; align-items: end; }
+@media (max-width: 640px) { .search-controls { grid-template-columns: minmax(0, 1fr); } }

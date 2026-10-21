@@ -39,7 +39,7 @@ The aim is to provide a single starting point for everyday searches and frequent
 
 ## Requirements, Dependencies
 
-- A current web browser with JavaScript enabled and support for HTML dialogs.
+- The latest stable version of a web browser with JavaScript enabled.
 - An internet connection to use external search services and bookmarked sites.
 - localStorage access to retain preferences, history and bookmarks across reloads.
 
@@ -62,7 +62,7 @@ Query construction and bookmark management run in the browser. Executing a searc
 
 ### Usage
 
-1. Select a search engine under **設定**, enter a query in **検索キーワード**, and press Enter or click **検索**. Results open on the selected search service in a new tab.
+1. Select a search engine beside the search keyword field, enter a query in **検索キーワード**, and press Enter or click **検索**. Results open on the selected search service in a new tab.
 2. For advanced searches, fill in **詳細検索** and click **詳細検索を実行**. Separate multiple exact phrases with commas; separate alternative words, excluded words and multiple sites with spaces.
 3. To save a bookmark, click **＋ 追加**, enter **サイト名** and **URL**, then click **保存**. A URL without a scheme is treated as HTTPS.
 4. Click a bookmark title to open it, or its **×** button and **削除する** to remove it.
@@ -133,7 +133,7 @@ Shared styles, navigation and themes: [oz-coden.com-ui-web](https://github.com/o
 
 ## 前提・依存
 
-- JavaScriptが有効で、HTMLのdialog要素に対応した最新のWebブラウザ。
+- JavaScriptが有効な最新版（安定版）のWebブラウザ。
 - 外部の検索サービスやブックマーク先を利用するためのインターネット接続。
 - 設定・履歴・ブックマークを再読み込み後も保持するためのlocalStorageへのアクセス。
 
@@ -156,7 +156,7 @@ Shared styles, navigation and themes: [oz-coden.com-ui-web](https://github.com/o
 
 ### 使い方
 
-1. **設定**で検索エンジンを選び、**検索キーワード**に入力してEnterまたは**検索**を押します。選択した検索サービスの結果を別タブで開きます。
+1. **検索キーワード**の近くで検索エンジンを選び、**検索キーワード**に入力してEnterまたは**検索**を押します。選択した検索サービスの結果を別タブで開きます。
 2. 詳細な条件を指定する場合は、**詳細検索**に入力して**詳細検索を実行**を押します。複数の完全一致フレーズはカンマで、候補語・除外語・複数のサイトは空白で区切ります。
 3. ブックマークを登録するには**＋ 追加**を押し、**サイト名**と**URL**を入力して**保存**を押します。スキームのないURLはHTTPSとして扱います。
 4. ブックマークのサイト名でページを開きます。削除する場合は、そのカードの**×**、**削除する**の順に押します。
